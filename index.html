@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="./assets/img/skull-solid-favicon.svg" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Monster Jobs</title>
 </head>
@@ -15,7 +16,7 @@
     <!-- HEADER SECTION -->
     <header class="flex items-center w-full mb-16 bg-teal-400">
         <nav class="flex justify-between items-center flex-wrap w-full lg:py-5 lg:px-7 text-slate-50">
-            <h1 class="py-2 px-3 text-3xl lg:text-4xl font-semibold"><i class="mr-2 fa-solid fa-wallet"></i> Monster Jobs</h1>
+            <h1 class="py-2 px-3 text-3xl lg:text-4xl font-semibold"><i class="mr-2 fa-solid fa-skull"></i> Monster Jobs</h1>
             <button id="btn-menu" class="btn py-3 px-4 focus:bg-teal-500 lg:hidden"
                 aria-label="Enable/Disable navegation menu">
                 <i id="show-burger-menu" class="fa-solid fa-bars" aria-hidden="true"></i>
@@ -24,12 +25,18 @@
             <ul id="nav-menu-container" class="flex hidden lg:flex flex-col lg:flex-row w-full lg:w-auto p-2 bg-white lg:bg-inherit drop-shadow-xl lg:drop-shadow-none text-neutral-600 lg:text-inherit">
                 <li>
                     <a id="new-job-link" class="block w-full lg:w-auto p-2 focus:text-blue-500 lg:focus:text-inherit focus:bg-gray-50 lg:focus:bg-teal-500 lg:focus:rounded" href="#" aria-label="Show new job form">
-                    <i class="fa-solid fa-chart-line mr-1" aria-hidden="true"></i> New job
+                    <i class="fa-solid fa-file-lines mr-1" aria-hidden="true"></i> New job
                     </a>
                 </li>
             </ul>
         </nav>
     </header>
+
+    <main>
+        <section class="hero-section">
+            <img src="./assets/img/hero.jpg" alt="spooky scene" class="">
+        </section>
+    </main>
 
     <!-- LINK TO SCRIPTS -->
     <script src="app.js"></script>
