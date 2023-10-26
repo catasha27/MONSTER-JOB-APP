@@ -52,19 +52,21 @@
         </section>
 
         <!-- Filter Section -->
-        <section id="filter-wrapper" class="flex justify-center items-center">
-            <form action="" class="filter-menu-container flex w-full">
-                <select name="monster-type-menu" id="monster-type-menu" class="p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500/25 focus-visible:outline-none" aria-label="Monster types list">
+        <section id="filter-wrapper" class="flex">
+            <form action="" class="filter-menu-container flex justify-center w-full my-10 gap-5">
+                <select name="monster-type-menu" id="monster-type-menu" class="p-2 rounded-md focus:ring-4 focus:ring-[#606EB4ff] focus-visible:outline-none" aria-label="Monster types list">
                     <!-- Here we will render monster types from API -->
                 </select>
-                <select name="location-menu" id="location-menu" class="p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500/25 focus-visible:outline-none" aria-label="Locations list">
+                <select name="location-menu" id="location-menu" class="p-2 rounded-md focus:ring-4 focus:ring-[#606EB4ff] focus-visible:outline-none" aria-label="Locations list">
                     <!-- Here we will render locations from API -->
                 </select>
-                <select name="workload-menu" id="workload-menu" class="p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500/25 focus-visible:outline-none" aria-label="Workload types list">
+                <select name="workload-menu" id="workload-menu" class="p-2 rounded-md focus:ring-4 focus:ring-[#606EB4ff] focus-visible:outline-none" aria-label="Workload types list">
                     <!-- Here we will render workload types from API -->
                 </select>
-                <button type="submit">Search</button>
-                <button type="reset"><i class="fa-solid fa-eraser"></i>Clear</button>
+                <div class="flex flex-row justify-end items-center gap-2">
+                    <button id="btn-search-filter" type="submit" class="btn flex-start text-slate-50 text-base py-2 px-3 bg-lime-600 hover:bg-green-700/90 rounded-md" aria-label="Search by selected filter"><i class="fa-solid fa-magnifying-glass mr-1"></i>Search</button>
+                    <button id="btn-reset-filter" type="reset" class="btn flex-start text-base py-2 px-3 bg-slate-300 hover:bg-slate-400 rounded-md" aria-label="Reset filters"><i class="fa-solid fa-eraser mr-1"></i>Clear</button>
+                </div>
             </form>
         </section>
     </main>
@@ -72,10 +74,10 @@
     <!-- FOOTER SECTION -->
     <footer class="flex flex-col items-center w-full bg-teal-400">
         <ul
-            class="contact-icons-wrapper flex flex-row w-full lg:w-auto p-2 bg-white lg:bg-inherit text-2xl lg:text-3xl text-neutral-600">
+            class="contact-icons-wrapper flex flex-row w-auto p-2 text-2xl lg:text-3xl text-neutral-600">
             <li>
                 <a href="https://discord.com/" target="_blank"
-                    class="block w-full lg:w-auto p-2 focus:text-blue-500 lg:focus:text-inherit focus:bg-gray-50 lg:focus:bg-teal-500 lg:focus:rounded"
+                    class="block w-auto p-2 focus:text-blue-500 lg:focus:text-inherit focus:bg-gray-50 lg:focus:bg-teal-500 lg:focus:rounded"
                     aria-label="Redirect to discord page">
                     <i class="fa-brands fa-discord mr-2" aria-hidden="true"></i>
                 </a>
