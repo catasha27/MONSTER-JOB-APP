@@ -7,25 +7,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="shortcut icon" href="./assets/img/skull-solid-favicon.svg" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./assets/img/skull-solid-favicon.svg" type="image/x-icon">
     <title>Monster Jobs</title>
 </head>
 
 <body>
     <!-- HEADER SECTION -->
-    <header class="flex items-center w-full mb-16 bg-teal-400">
+    <header class="flex items-center w-full bg-teal-400">
         <nav class="flex justify-between items-center flex-wrap w-full lg:py-5 lg:px-7 text-slate-50">
-            <h1 class="py-2 px-3 text-3xl lg:text-4xl font-semibold"><i class="mr-2 fa-solid fa-skull"></i> Monster Jobs</h1>
+            <h1 class="py-2 px-3 text-3xl lg:text-4xl font-medium font-['Nosifer']"><i class="mr-2 fa-solid fa-skull"></i> Monster
+                Jobs</h1>
             <button id="btn-menu" class="btn py-3 px-4 focus:bg-teal-500 lg:hidden"
                 aria-label="Enable/Disable navegation menu">
                 <i id="show-burger-menu" class="fa-solid fa-bars" aria-hidden="true"></i>
                 <i id="close-burger-menu" class="fa-solid fa-x hidden" aria-hidden="true"></i>
             </button>
-            <ul id="nav-menu-container" class="flex hidden lg:flex flex-col lg:flex-row w-full lg:w-auto p-2 bg-white lg:bg-inherit drop-shadow-xl lg:drop-shadow-none text-neutral-600 lg:text-inherit">
+            <ul id="nav-menu-container"
+                class="flex hidden lg:flex flex-col lg:flex-row w-full lg:w-auto p-2 bg-white lg:bg-inherit drop-shadow-xl lg:drop-shadow-none text-neutral-600 lg:text-inherit">
                 <li>
-                    <a id="new-job-link" class="block w-full lg:w-auto p-2 focus:text-blue-500 lg:focus:text-inherit focus:bg-gray-50 lg:focus:bg-teal-500 lg:focus:rounded" href="#" aria-label="Show new job form">
-                    <i class="fa-solid fa-file-lines mr-1" aria-hidden="true"></i> New job
+                    <a id="new-job-link"
+                        class="block w-full lg:w-auto p-2 focus:text-blue-500 lg:focus:text-inherit focus:bg-gray-50 lg:focus:bg-teal-500 lg:focus:rounded"
+                        href="#" aria-label="Show new job form">
+                        <i class="fa-solid fa-file-lines mr-1" aria-hidden="true"></i> Create job
                     </a>
                 </li>
             </ul>
@@ -41,31 +48,41 @@
 
     <!-- FOOTER SECTION -->
     <footer class="flex flex-col items-center w-full bg-teal-400">
-        <ul class="contact-icons-wrapper flex flex-row w-full lg:w-auto p-2 bg-white lg:bg-inherit text-2xl lg:text-3xl text-neutral-600">
+        <ul
+            class="contact-icons-wrapper flex flex-row w-full lg:w-auto p-2 bg-white lg:bg-inherit text-2xl lg:text-3xl text-neutral-600">
             <li>
-                <a href="https://discord.com/" target="_blank" class="block w-full lg:w-auto p-2 focus:text-blue-500 lg:focus:text-inherit focus:bg-gray-50 lg:focus:bg-teal-500 lg:focus:rounded" aria-label="Redirect to discord page">
-                    <i class="fa-brands fa-discord mr-2"  aria-hidden="true" ></i>
+                <a href="https://discord.com/" target="_blank"
+                    class="block w-full lg:w-auto p-2 focus:text-blue-500 lg:focus:text-inherit focus:bg-gray-50 lg:focus:bg-teal-500 lg:focus:rounded"
+                    aria-label="Redirect to discord page">
+                    <i class="fa-brands fa-discord mr-2" aria-hidden="true"></i>
                 </a>
             </li>
             <li>
-                <a href="https://github.com/catasha27" target="_blank" class="block w-full lg:w-auto p-2 focus:text-blue-500 lg:focus:text-inherit focus:bg-gray-50 lg:focus:bg-teal-500 lg:focus:rounded" aria-label="Redirect to github page">
-                    <i class="fa-brands fa-github-alt mr-2"  aria-hidden="true"></i>
+                <a href="https://github.com/catasha27" target="_blank"
+                    class="block w-full lg:w-auto p-2 focus:text-blue-500 lg:focus:text-inherit focus:bg-gray-50 lg:focus:bg-teal-500 lg:focus:rounded"
+                    aria-label="Redirect to github page">
+                    <i class="fa-brands fa-github-alt mr-2" aria-hidden="true"></i>
                 </a>
             </li>
             <li>
-                <a href="https://www.linkedin.com/in/sharime-cahuas-tamayo-273081/" target="_blank" class="block w-full lg:w-auto p-2 focus:text-blue-500 lg:focus:text-inherit focus:bg-gray-50 lg:focus:bg-teal-500 lg:focus:rounded" aria-label="Redirect to linkedin page">
-                    <i class="fa-brands fa-linkedin-in mr-2"  aria-hidden="true"></i>
+                <a href="https://www.linkedin.com/in/sharime-cahuas-tamayo-273081/" target="_blank"
+                    class="block w-full lg:w-auto p-2 focus:text-blue-500 lg:focus:text-inherit focus:bg-gray-50 lg:focus:bg-teal-500 lg:focus:rounded"
+                    aria-label="Redirect to linkedin page">
+                    <i class="fa-brands fa-linkedin-in mr-2" aria-hidden="true"></i>
                 </a>
             </li>
             <li>
-                <a href="mailto:sharimecahuas@gmail.com" class="block w-full lg:w-auto p-2 focus:text-blue-500 lg:focus:text-inherit focus:bg-gray-50 lg:focus:bg-teal-500 lg:focus:rounded" aria-label="Redirect to email page">
-                    <i class="fa-regular fa-paper-plane"  aria-hidden="true"></i>  
+                <a href="mailto:sharimecahuas@gmail.com"
+                    class="block w-full lg:w-auto p-2 focus:text-blue-500 lg:focus:text-inherit focus:bg-gray-50 lg:focus:bg-teal-500 lg:focus:rounded"
+                    aria-label="Redirect to email page">
+                    <i class="fa-regular fa-paper-plane" aria-hidden="true"></i>
                 </a>
             </li>
         </ul>
-        <p id="farewell-message" class="flex flex-row pb-4">Created with 
-            <img src="./assets/img/heart-in-hand-icon.svg" alt="red heart in hand icon" class="h-6 mx-2"> 
-            by Sharime Cahuas</p>
+        <p id="farewell-message" class="flex flex-row pb-4">Created with
+            <img src="./assets/img/heart-in-hand-icon.svg" alt="red heart in hand icon" class="h-6 mx-2">
+            by Sharime Cahuas
+        </p>
     </footer>
 
     <!-- LINK TO SCRIPTS -->
