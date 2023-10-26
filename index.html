@@ -18,8 +18,8 @@
 <body>
     <!-- HEADER SECTION -->
     <header class="flex items-center w-full bg-teal-400">
-        <nav class="flex justify-between items-center flex-wrap w-full lg:py-5 lg:px-7 text-slate-50">
-            <h1 class="py-2 px-3 text-3xl lg:text-4xl font-medium font-['Nosifer'] text-lime-500 drop-shadow-[1px_1px_2px_rgba(0,0,0,1)]"><i class="mr-2 fa-solid fa-skull"></i> Monster
+        <nav class="flex justify-between items-center flex-wrap w-full py-3 lg:py-5 px-5 lg:px-7 text-slate-50">
+            <h1 class="py-2 px-3 text-2xl lg:text-4xl font-medium font-['Nosifer'] text-lime-500 drop-shadow-[1px_1px_2px_rgba(0,0,0,1)]"><i class="mr-2 fa-solid fa-skull"></i> Monster
                 Jobs</h1>
             <button id="btn-menu" class="btn py-3 px-4 focus:bg-teal-500 lg:hidden"
                 aria-label="Enable/Disable navegation menu">
@@ -27,28 +27,45 @@
                 <i id="close-burger-menu" class="fa-solid fa-x hidden" aria-hidden="true"></i>
             </button>
             <ul id="nav-menu-container"
-                class="flex hidden lg:flex flex-col lg:flex-row w-full lg:w-auto p-2 bg-white lg:bg-inherit drop-shadow-xl lg:drop-shadow-none text-neutral-600 lg:text-inherit">
+                class="flex hidden lg:flex flex-col lg:flex-row w-full lg:w-auto p-2 bg-white lg:bg-inherit drop-shadow-xl lg:drop-shadow-none text-lg text-neutral-600 lg:text-inherit">
                 <li>
                     <a id="new-job-link"
                         class="block w-full lg:w-auto p-2 focus:text-blue-500 lg:focus:text-inherit focus:bg-gray-50 lg:focus:bg-teal-500 lg:focus:rounded"
                         href="#" aria-label="Show new job form">
-                        <i class="fa-solid fa-file-lines mr-1" aria-hidden="true"></i> Create job
-                    </a>
+                        <i class="fa-solid fa-file-lines mr-1" aria-hidden="true"></i> Add job </a>
                 </li>
             </ul>
         </nav>
     </header>
 
     <!-- MAIN SECTION -->
-    <main>
-        <!-- HERO WITH SLOGAN SECTION -->
-        <section class="hero-section flex justify-center items-center bg-[url('./assets/img/hero.jpg')] h-96 bg-cover bg-center">
+    <main class="bg-[#161848ff]">
+        
+        <!-- Hero with slogan Section -->
+        <section id="hero-wrapper" class="flex justify-center items-center bg-[url('./assets/img/hero.jpg')] h-96 bg-cover bg-center">
             <div class="flex justify-center items-center bg-[url('./assets/img/blob.svg')] h-40 bg-no-repeat bg-center">
                 <p class="text-xl text-neutral-500 font-semibold m-16 text-center">Come find your <br/>
                     <span class="text-2xl font-bold">terrific</span>
                     <span id="slogan-text-change" class="hidden text-2xl font-['Nosifer'] text-lime-500 drop-shadow-[1px_1px_2px_rgba(0,0,0,1)]">terrorific</span> <br/>
                     job with us!</p>
             </div>
+        </section>
+
+        <!-- Filter Section -->
+        <section id="filter-wrapper" class="flex justify-center items-center">
+            <form action="" class="filter-menu-container flex w-full">
+                <select name="monster-type-menu" id="monster-type-menu" class="p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500/25 focus-visible:outline-none" aria-label="Monster types list">
+                    <!-- Here we will render monster types from API -->
+                </select>
+                <select name="location-menu" id="location-menu" class="p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500/25 focus-visible:outline-none" aria-label="Locations list">
+                    <!-- Here we will render locations from API -->
+                </select>
+                <select name="workload-menu" id="workload-menu" class="p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500/25 focus-visible:outline-none" aria-label="Workload types list">
+                    <!-- Here we will render workload types from API -->
+                </select>
+                <button type="submit">Search</button>
+                <button type="reset"><i class="fa-solid fa-eraser"></i>Clear</button>
+            </form>
         </section>
     </main>
 
