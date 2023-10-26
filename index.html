@@ -17,7 +17,7 @@
 
 <body>
     <!-- HEADER SECTION -->
-    <header class="flex items-center w-full bg-teal-400">
+    <header class="flex items-center w-full bg-[#66C0D3ff]">
         <nav class="flex justify-between items-center flex-wrap w-full py-3 lg:py-5 px-5 lg:px-7 text-slate-50">
             <h1 class="py-2 px-3 text-2xl lg:text-4xl font-medium font-['Nosifer'] text-lime-500 drop-shadow-[1px_1px_2px_rgba(0,0,0,1)]"><i class="mr-2 fa-solid fa-skull"></i> Monster
                 Jobs</h1>
@@ -52,7 +52,7 @@
         </section>
 
         <!-- Filter Section -->
-        <section id="filter-wrapper" class="flex">
+        <section id="filter-wrapper" class="flex my-8">
             <form action="" class="filter-menu-container flex flex-wrap justify-center w-full my-10 gap-5">
                 <select name="monster-type-menu" id="monster-type-menu" class="p-2 rounded-md focus:ring-4 focus:ring-[#606EB4ff] focus-visible:outline-none" aria-label="Monster types list">
                     <!-- Here we will render monster types from API -->
@@ -71,7 +71,7 @@
         </section>
 
         <!-- Jobs Section -->
-        <section id="job-cards-wrapper" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 justify-items-center w-full gap-5 px-6 pb-10">
+        <section id="job-cards-wrapper" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 justify-items-center w-full gap-5 px-6 pb-10">
             <article class="flex flex-col p-4 bg-white drop-shadow-xl rounded-md w-80">
                 <figure>
                     <img id="job-image" src="./assets/img/card image.jpg" class="rounded-md mb-3 h-64 w-full object-cover">
@@ -90,7 +90,46 @@
         </section>
 
         <!-- Job Detail Section -->
-        <section>
+        <section id="job-detail-wrapper" class="flex flex-col items-center w-full px-3 sm:px-10 pb-10">
+            <article class="flex flex-col sm:flex-row gap-8 p-7 bg-white drop-shadow-xl rounded-md text-slate-800 w-auto 2xl:w-[1500px]">
+                <img id="job-image" src="./assets/img/card image.jpg" class="rounded-md mb-3 h-64 w-full xl:h-96 xl:w-auto object-cover">
+                <div class="job-data flex flex-col gap-2">
+                    <div class="flex flex-col items-start sm:flex-row gap-3 mb-2">
+                        <h3 id="job-position" class="text-2xl sm:text-xl font-extrabold text-slate-900">Job Position</h3>
+                        <span id="monster-type" class="items-center py-1 px-2.5 text-base font-semibold bg-orange-200 border border-orange-600 rounded-full">Vampiro</span>
+                    </div> <hr>
+                    <p class="font-bold ">Description:</p>
+                    <p id="job-description" class="font-normal mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni dolorem, corporis corrupti omnis ipsum velit eveniet tenetur pariatur praesentium aliquam delectus reiciendis autem aspernatur! Tenetur omnis exercitationem, reiciendis, doloribus soluta voluptatibus, laboriosam ratione quos rem voluptate quibusdam culpa magnam nisi!</p> <hr>
+                    <div class="flex flex-col gap-8">
+                        <div class="flex flex-row flex-wrap gap-8">
+                            <p id="job-location" ><i class="fa-solid fa-earth-americas mr-2"></i>Argentina</p>
+                            <p id="job-workload" ><i class="fa-regular fa-clock mr-2"></i>Part-time</p>
+                            <p id="job-salary" ><i class="fa-solid fa-dollar-sign mr-2"></i>20000</p>
+                            <p id="job-experience" ><i class="fa-solid fa-user-check mr-2"></i>Experience requiered: <span class="uppercase mr-1">yes</span></p>
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-8 md:gap-28">
+                            <div class="flex flex-col gap-3">
+                                <p class="font-bold">Perks:</p>
+                                <p id="job-time-off"><i class="fa-solid fa-plane-departure mr-2"></i>PTO: 2 weeks</p>
+                                <p id="job-allowance"><i class="fa-solid fa-hand-holding-dollar mr-2"></i>Allowance: <span class="uppercase mr-1">no</span></p>
+                                <p id="job-training"><i class="fa-solid fa-graduation-cap mr-2"></i>Training provided: <span class="uppercase mr-1">yes</span></p>
+                            </div>
+                            <div id="job-skills" class="flex flex-col gap-3">
+                                <p class="font-bold">Skills:</p>
+                                <ul role="list" class="marker:text-[#66C0D3ff] list-disc pl-5 space-y-3">
+                                    <li>Skill 1</li>
+                                    <li>Skill 1</li>
+                                    <li>Skill 1</li>                                
+                                </ul>                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-row justify-end items-center gap-4 mt-4">
+                        <button id="btn-edit-job" class="btn flex justify-center items-center text-slate-50 text-base mt-4 py-2 px-5 bg-lime-600 hover:bg-green-700/90 rounded-md" aria-label="Edit job data"><i class="fa-regular fa-pen-to-square mr-2"></i>Edit</i></button>
+                        <button id="btn-delete-job" class="btn flex justify-center items-center text-slate-50 text-base mt-4 py-2 px-3 bg-purple-900  hover:bg-red-700/90 rounded-md" aria-label="Delete job"><i class="fa-solid fa-trash mr-2"></i>Delete</button>
+                    </div>
+                </div>
+            </article>
 
             <!-- Edit Job Form Section -->
             <article>
@@ -103,7 +142,7 @@
     </main>
 
     <!-- FOOTER SECTION -->
-    <footer class="flex flex-col items-center w-full bg-teal-400">
+    <footer class="flex flex-col items-center w-full bg-[#66C0D3ff]">
         <ul
             class="contact-icons-wrapper flex flex-row w-auto p-2 text-2xl lg:text-3xl text-neutral-600">
             <li>
