@@ -39,7 +39,7 @@
     </header>
 
     <!-- MAIN SECTION -->
-    <main class="bg-[#161848ff]">
+    <main class="bg-[#161848ff] pb-10">
         
         <!-- Hero with slogan Section -->
         <section id="hero-wrapper" class="flex justify-center items-center bg-[url('./assets/img/hero.jpg')] h-96 bg-cover bg-center">
@@ -105,7 +105,7 @@
                             <p id="job-location" ><i class="fa-solid fa-earth-americas mr-2"></i>Argentina</p>
                             <p id="job-workload" ><i class="fa-regular fa-clock mr-2"></i>Part-time</p>
                             <p id="job-salary" ><i class="fa-solid fa-dollar-sign mr-2"></i>20000</p>
-                            <p id="job-experience" ><i class="fa-solid fa-user-check mr-2"></i>Experience requiered: <span class="uppercase mr-1">yes</span></p>
+                            <p id="job-experience" ><i class="fa-solid fa-user-check mr-2"></i>Experience required: <span class="uppercase mr-1">yes</span></p>
                         </div>
                         <div class="flex flex-col md:flex-row gap-8 md:gap-28">
                             <div class="flex flex-col gap-3">
@@ -130,14 +130,157 @@
                     </div>
                 </div>
             </article>
-
-            <!-- Edit Job Form Section -->
-            <article>
-            </article>
         </section>
         
-        <!-- Add Job Form Section -->
-        <section>
+        <!-- New and Edit Job Form Section -->
+        <section id="job-form-wrapper" class="flex flex-col items-center w-full px-3 sm:px-10 pb-10">
+            <article class="flex flex-col items-center w-full p-7 bg-white drop-shadow-xl rounded-md text-slate-800 2xl:w-[1500px]">
+                <h2 id="new-job-title" class="self-start mb-5 text-4xl font-bold hidden">Add Job</h2>
+                <h2 id="edit-job-title" class="self-start mb-5 text-4xl font-bold">Edit Job</h2>
+                <form action="" id="new-job-form" class=" flex flex-col gap-6 w-full">
+                    <div class="flex flex-col flex-wrap gap-6 sm:flex-row sm:justify-between">
+                        <div class="flex flex-col flex-1 basis-52 gap-1">
+                            <label for="monster-option" class="font-bold">Monster Types<span class="text-red-500 ml-1">*</span></label>
+                            <select name="monster-option" id="monster-option" class="p-2 border border-gray-300 rounded-md focus:ring-4 focus:ring-[#606EB4ff] focus-visible:outline-none" aria-label="List of monster types">
+                                <!-- Here the types of monster will be rendered from API -->
+                            </select> <br>
+                            <label for="job-title-entry" class="font-bold">Job Title<span class="text-red-500 ml-1">*</span></label>
+                            <input type="text"  name="job-title-entry" id="job-title-entry" placeholder="Job title" class="p-2 border border-gray-300 rounded-md focus:ring-4 focus:ring-[#606EB4ff] focus-visible:outline-none" aria-label="Job title"><br>
+                            <label for="job-description-entry" class="font-bold">Job Description<span class="text-red-500 ml-1">*</span></label>
+                            <textarea name="job-description-entry" id="job-description-entry" rows="4" placeholder="Job description" class="p-2 border border-gray-300 rounded-md focus:ring-4 focus:ring-[#606EB4ff] focus-visible:outline-none" aria-label="Job description"></textarea>
+                        </div>
+                        <div class="flex flex-col flex-1 basis-52 gap-1">
+                            <label for="location-option" class="font-bold">Location<span class="text-red-500 ml-1">*</span></label>
+                            <select name="location-option" id="location-option" class="p-2 border border-gray-300 rounded-md focus:ring-4 focus:ring-[#606EB4ff] focus-visible:outline-none" aria-label="List of countries">
+                                <!-- Here the list of countries will be rendered from API -->
+                            </select><br>
+                            <label for="workload-option" class="font-bold">Workload<span class="text-red-500 ml-1">*</span></label>
+                            <select name="workload-option" id="workload-option" class="p-2 border border-gray-300 rounded-md focus:ring-4 focus:ring-[#606EB4ff] focus-visible:outline-none" aria-label="Types of worload">
+                                <!-- Here the types of workload will be rendered from API -->
+                            </select><br>
+                            <label for="salary" class="font-bold">Annual Salary<span class="text-red-500 ml-1">*</span></label>
+                            <input type="text" name="salary" id="salary" placeholder="0" class="p-2 border border-gray-300 rounded-md focus:ring-4 focus:ring-[#606EB4ff] focus-visible:outline-none" aria-label="Annual salary">
+                        </div>
+                        <div class="flex flex-col flex-1 gap-1 shrink-0 basis-52">
+                            <div class="flex">
+                                <input type="checkbox" id="valid-experience" aria-label="Checkbox for valid experience required">
+                                <label for="valid-experience" class="ml-2 font-bold">Experience Required</label>
+                            </div><br>
+                            <fieldset class="border rounded-md px-4">
+                                <legend class="my-3 font-bold">Perks:</legend>
+                                <label for="vacation" class="my-3 font-bold">PTO</label>
+                                <input type="text" name="vacation" id="vacation" placeholder="0" class="p-2 mx-2 w-12 border border-gray-300 rounded-md focus:ring-4 focus:ring-[#606EB4ff] focus-visible:outline-none" aria-label="Paid time-off"><span>weeks</span>
+                                <div class="flex">
+                                    <input type="checkbox" id="valid-allowance" aria-label="Checkbox for valid allowance">
+                                    <label for="valid-allowance" class="my-3 ml-2 font-bold">Allowance</label>
+                                </div>
+                                <div class="flex">
+                                    <input type="checkbox" id="valid-training" aria-label="Checkbox for valid training given to candidate">
+                                    <label for="valid-training" class="my-3 ml-2 font-bold">In Company Training Provided</label>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <fieldset class="border-2 rounded-md px-4">
+                        <legend class="my-3 font-bold">Skills Required<span class="font-light mx-1">(max. 3 allowed)</span></label></legend>
+                            <!-- Here the list of skills will be rendered from API -->
+                        <div id="skill-options-container" class="skills pb-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+                <div>
+                    <input type="checkbox" id="ability to work under pressure" class="skill mr-2" value="ability to work under pressure"/>
+                    <label for="ability to work under pressure">ability to work under pressure</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="adaptability" class="skill mr-2" value="adaptability"/>
+                    <label for="adaptability">adaptability</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="collaboration" class="skill mr-2" value="collaboration"/>
+                    <label for="collaboration">collaboration</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="commonsense" class="skill mr-2" value="commonsense"/>
+                    <label for="commonsense">commonsense</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="confidence" class="skill mr-2" value="confidence"/>
+                    <label for="confidence">confidence</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="creativity" class="skill mr-2" value="creativity"/>
+                    <label for="creativity">creativity</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="decision-making" class="skill mr-2" value="decision-making"/>
+                    <label for="decision-making">decision-making</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="empathy" class="skill mr-2" value="empathy"/>
+                    <label for="empathy">empathy</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="flexibility" class="skill mr-2" value="flexibility"/>
+                    <label for="flexibility">flexibility</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="good attitude" class="skill mr-2" value="good attitude"/>
+                    <label for="good attitude">good attitude</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="intuitive" class="skill mr-2" value="intuitive"/>
+                    <label for="intuitive">intuitive</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="motivated" class="skill mr-2" value="motivated"/>
+                    <label for="motivated">motivated</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="pacience" class="skill mr-2" value="pacience"/>
+                    <label for="pacience">pacience</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="passionate" class="skill mr-2" value="passionate"/>
+                    <label for="passionate">passionate</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="persuasion" class="skill mr-2" value="persuasion"/>
+                    <label for="persuasion">persuasion</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="proactivity" class="skill mr-2" value="proactivity"/>
+                    <label for="proactivity">proactivity</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="problem solving" class="skill mr-2" value="problem solving"/>
+                    <label for="problem solving">problem solving</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="quick thinking" class="skill mr-2" value="quick thinking"/>
+                    <label for="quick thinking">quick thinking</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="risk-taker" class="skill mr-2" value="risk-taker"/>
+                    <label for="risk-taker">risk-taker</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="sense of humor" class="skill mr-2" value="sense of humor"/>
+                    <label for="sense of humor">sense of humor</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="trustworthy" class="skill mr-2" value="trustworthy"/>
+                    <label for="trustworthy">trustworthy</label>
+                </div>
+                        </div>
+                    </fieldset>
+                    <div class="flex flex-row justify-end items-center gap-4">
+                        <p id="new-success-message" class="italic text-sm font-medium text-green-600 hidden" aria-label="Confirmación de operación agregada">NEW JOB ADDED</p>
+                        <p id="edit-success-message" class="italic text-sm font-medium text-green-600 hidden" aria-label="Confirmación de operación editado">JOB EDITED CORRECTLY</p>
+                        <button id="btn-cancel-job-form" class="btn justify-center items-center text-base mt-4 py-2 px-5 bg-slate-300 hover:bg-slate-500 rounded-md" aria-label="Cancel changes in job form">Cancel
+                        </button>
+                        <button id="btn-edit-job" type="submit" class="btn flex justify-center items-center text-slate-50 text-base mt-4 py-2 px-5 bg-lime-600 hover:bg-green-700/90 rounded-md" aria-label="Edit job data"><i class="fa-regular fa-pen-to-square mr-2"></i>Edit</i></button>
+                        <button id="btn-new-job" type="submit" class="btn hidden flex justify-center items-center text-slate-50 text-base mt-4 py-2 px-5 bg-lime-600 hover:bg-green-700/90 rounded-md" aria-label="Add new job data"><i class="fa-solid fa-cloud-arrow-up mr-2"></i>Submit</i></button>
+                    </div>
+                </form>
+            </article>
         </section>
     </main>
 
@@ -185,4 +328,4 @@
     <script src="main.js"></script>
 </body>
 
-</html>
+</html>  
