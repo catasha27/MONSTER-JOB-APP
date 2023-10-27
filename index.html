@@ -19,9 +19,8 @@
     <!-- HEADER SECTION -->
     <header class="flex items-center w-full bg-[#66C0D3ff]">
         <nav class="flex justify-between items-center flex-wrap w-full py-3 lg:py-5 px-5 lg:px-7 text-slate-50">
-            <h1 class="py-2 px-3 text-2xl lg:text-4xl font-medium font-['Nosifer'] text-lime-500 drop-shadow-[1px_1px_2px_rgba(0,0,0,1)]"><i class="mr-2 fa-solid fa-skull"></i> Monster
-                Jobs</h1>
-            <button id="btn-menu" class="btn py-3 px-4 focus:bg-teal-500 lg:hidden"
+            <h1 class="text-2xl sm:text-4xl font-medium font-['Nosifer'] text-lime-500 drop-shadow-[1px_1px_2px_rgba(0,0,0,1)]"><i class="mr-1 sm:mr-2 fa-solid fa-skull" aria-hidden="true"></i> Monster Jobs</h1>
+            <button id="btn-menu" class="btn py-3 px-4 focus:bg- lg:hidden"
                 aria-label="Enable/Disable navegation menu">
                 <i id="show-burger-menu" class="fa-solid fa-bars" aria-hidden="true"></i>
                 <i id="close-burger-menu" class="fa-solid fa-x hidden" aria-hidden="true"></i>
@@ -34,6 +33,7 @@
                         href="#" aria-label="Show new job form">
                         <i class="fa-solid fa-file-lines mr-1" aria-hidden="true"></i> Add job </a>
                 </li>
+                <li><a href="#contact-info">Contact Info</a></li>
             </ul>
         </nav>
     </header>
@@ -64,8 +64,8 @@
                     <!-- Here we will render workload types from API -->
                 </select>
                 <div class="flex flex-row justify-end items-center gap-2">
-                    <button id="btn-search-filter" type="submit" class="btn flex-start text-slate-50 text-base py-2 px-3 bg-lime-600 hover:bg-green-700/90 rounded-md" aria-label="Search by selected filter"><i class="fa-solid fa-magnifying-glass mr-1"></i>Search</button>
-                    <button id="btn-reset-filter" type="reset" class="btn flex-start text-base py-2 px-3 bg-slate-300 hover:bg-slate-400 rounded-md" aria-label="Reset filters"><i class="fa-solid fa-eraser mr-1"></i>Clear</button>
+                    <button id="btn-search-filter" type="submit" class="btn flex-start text-slate-50 text-base py-2 px-3 bg-lime-600 hover:bg-green-700/90 rounded-md" aria-label="Search by selected filter"><i class="fa-solid fa-magnifying-glass mr-1" aria-hidden="true"></i>Search</button>
+                    <button id="btn-reset-filter" type="reset" class="btn flex-start text-base py-2 px-3 bg-slate-300 hover:bg-slate-400 rounded-md" aria-label="Reset filters"><i class="fa-solid fa-eraser mr-1" aria-hidden="true"></i>Clear</button>
                 </div>
             </form>
         </section>
@@ -79,13 +79,13 @@
                 </figure>
                 <div class="job-data mt-2">
                     <p id="job-description" class="font-normal text-slate-800 mb-3 line-clamp-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni dolorem, corporis corrupti omnis ipsum velit eveniet tenetur pariatur praesentium aliquam delectus reiciendis autem aspernatur! Tenetur omnis exercitationem, reiciendis, doloribus soluta voluptatibus, laboriosam ratione quos rem voluptate quibusdam culpa magnam nisi!</p>
-                    <p id="job-location" class="mb-2"><i class="fa-solid fa-earth-americas mr-1"></i>Argentina</p>
-                    <p id="job-workload" class="mb-3"><i class="fa-regular fa-clock mr-1"></i>Part-time</p>
+                    <p id="job-location" class="mb-2"><i class="fa-solid fa-earth-americas mr-1" aria-hidden="true"></i>Argentina</p>
+                    <p id="job-workload" class="mb-3"><i class="fa-regular fa-clock mr-1" aria-hidden="true"></i>Part-time</p>
                     <div>
                         <span id="monster-type" class="align-middle py-1 px-2.5 text-base font-normal bg-orange-200 border border-orange-600 rounded-full">Vampiro</span>
                     </div>
                 </div>
-                <button id="btn-detailed-data" class="btn flex justify-center items-center text-slate-50 text-base mt-4 py-2 px-3 bg-lime-600 hover:bg-green-700/90 rounded-md" aria-label="Redirect to full job data">Details<i class="fa-solid fa-angles-right mt-[2px] ml-1"></i></button>
+                <button id="btn-detailed-data" class="btn flex justify-center items-center text-slate-50 text-base mt-4 py-2 px-3 bg-lime-600 hover:bg-green-700/90 rounded-md" aria-label="Redirect to full job data">Details<i class="fa-solid fa-angles-right mt-[2px] ml-1" aria-hidden="true"></i></button>
             </article>  
         </section>
 
@@ -102,17 +102,17 @@
                     <p id="job-description" class="font-normal mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni dolorem, corporis corrupti omnis ipsum velit eveniet tenetur pariatur praesentium aliquam delectus reiciendis autem aspernatur! Tenetur omnis exercitationem, reiciendis, doloribus soluta voluptatibus, laboriosam ratione quos rem voluptate quibusdam culpa magnam nisi!</p> <hr>
                     <div class="flex flex-col gap-8">
                         <div class="flex flex-row flex-wrap gap-8">
-                            <p id="job-location" ><i class="fa-solid fa-earth-americas mr-2"></i>Argentina</p>
-                            <p id="job-workload" ><i class="fa-regular fa-clock mr-2"></i>Part-time</p>
-                            <p id="job-salary" ><i class="fa-solid fa-dollar-sign mr-2"></i>20000</p>
-                            <p id="job-experience" ><i class="fa-solid fa-user-check mr-2"></i>Experience required: <span class="uppercase mr-1">yes</span></p>
+                            <p id="job-location" ><i class="fa-solid fa-earth-americas mr-2" aria-hidden="true"></i>Argentina</p>
+                            <p id="job-workload" ><i class="fa-regular fa-clock mr-2" aria-hidden="true"></i>Part-time</p>
+                            <p id="job-salary" ><i class="fa-solid fa-dollar-sign mr-2" aria-hidden="true"></i>20000</p>
+                            <p id="job-experience" ><i class="fa-solid fa-user-check mr-2" aria-hidden="true"></i>Experience required: <span class="uppercase mr-1">yes</span></p>
                         </div>
                         <div class="flex flex-col md:flex-row gap-8 md:gap-28">
                             <div class="flex flex-col gap-3">
                                 <p class="font-bold">Perks:</p>
-                                <p id="job-time-off"><i class="fa-solid fa-plane-departure mr-2"></i>PTO: 2 weeks</p>
-                                <p id="job-allowance"><i class="fa-solid fa-hand-holding-dollar mr-2"></i>Allowance: <span class="uppercase mr-1">no</span></p>
-                                <p id="job-training"><i class="fa-solid fa-graduation-cap mr-2"></i>Training provided: <span class="uppercase mr-1">yes</span></p>
+                                <p id="job-time-off"><i class="fa-solid fa-plane-departure mr-2" aria-hidden="true"></i>PTO: 2 weeks</p>
+                                <p id="job-allowance"><i class="fa-solid fa-hand-holding-dollar mr-2" aria-hidden="true"></i>Allowance: <span class="uppercase mr-1">no</span></p>
+                                <p id="job-training"><i class="fa-solid fa-graduation-cap mr-2" aria-hidden="true"></i>Training provided: <span class="uppercase mr-1">yes</span></p>
                             </div>
                             <div id="job-skills" class="flex flex-col gap-3">
                                 <p class="font-bold">Skills:</p>
@@ -125,8 +125,8 @@
                         </div>
                     </div>
                     <div class="flex flex-row justify-end items-center gap-4 mt-4">
-                        <button id="btn-edit-job" class="btn flex justify-center items-center text-slate-50 text-base mt-4 py-2 px-5 bg-lime-600 hover:bg-green-700/90 rounded-md" aria-label="Edit job data"><i class="fa-regular fa-pen-to-square mr-2"></i>Edit</i></button>
-                        <button id="btn-delete-job" class="btn flex justify-center items-center text-slate-50 text-base mt-4 py-2 px-3 bg-purple-900  hover:bg-red-700/90 rounded-md" aria-label="Delete job"><i class="fa-solid fa-trash mr-2"></i>Delete</button>
+                        <button id="btn-edit-job" class="btn flex justify-center items-center text-slate-50 text-base mt-4 py-2 px-5 bg-lime-600 hover:bg-green-700/90 rounded-md" aria-label="Edit job data"><i class="fa-regular fa-pen-to-square mr-2" aria-hidden="true"></i>Edit</i></button>
+                        <button id="btn-delete-job" class="btn flex justify-center items-center text-slate-50 text-base mt-4 py-2 px-3 bg-purple-900  hover:bg-red-700/90 rounded-md" aria-label="Delete job"><i class="fa-solid fa-trash mr-2" aria-hidden="true"></i>Delete</button>
                     </div>
                 </div>
             </article>
@@ -276,8 +276,8 @@
                         <p id="edit-success-message" class="italic text-sm font-medium text-green-600 hidden" aria-label="Confirmación de operación editado">JOB EDITED CORRECTLY</p>
                         <button id="btn-cancel-job-form" class="btn justify-center items-center text-base mt-4 py-2 px-5 bg-slate-300 hover:bg-slate-500 rounded-md" aria-label="Cancel changes in job form">Cancel
                         </button>
-                        <button id="btn-edit-job" type="submit" class="btn flex justify-center items-center text-slate-50 text-base mt-4 py-2 px-5 bg-lime-600 hover:bg-green-700/90 rounded-md" aria-label="Edit job data"><i class="fa-regular fa-pen-to-square mr-2"></i>Edit</i></button>
-                        <button id="btn-new-job" type="submit" class="btn hidden flex justify-center items-center text-slate-50 text-base mt-4 py-2 px-5 bg-lime-600 hover:bg-green-700/90 rounded-md" aria-label="Add new job data"><i class="fa-solid fa-cloud-arrow-up mr-2"></i>Submit</i></button>
+                        <button id="btn-edit-job" type="submit" class="btn flex justify-center items-center text-slate-50 text-base mt-4 py-2 px-5 bg-lime-600 hover:bg-green-700/90 rounded-md" aria-label="Edit job data"><i class="fa-regular fa-pen-to-square mr-2" aria-hidden="true"></i>Edit</i></button>
+                        <button id="btn-new-job" type="submit" class="btn hidden flex justify-center items-center text-slate-50 text-base mt-4 py-2 px-5 bg-lime-600 hover:bg-green-700/90 rounded-md" aria-label="Add new job data"><i class="fa-solid fa-cloud-arrow-up mr-2" aria-hidden="true"></i>Submit</i></button>
                     </div>
                 </form>
             </article>
@@ -285,7 +285,7 @@
     </main>
 
     <!-- FOOTER SECTION -->
-    <footer class="flex flex-col items-center w-full bg-[#66C0D3ff]">
+    <footer id="contact-info" class="flex flex-col items-center w-full bg-[#66C0D3ff]">
         <ul class="contact-icons-wrapper flex flex-row w-auto p-2 mb-4 text-2xl lg:text-3xl text-slate-800">
             <li>
                 <a href="https://discord.com/" target="_blank"
