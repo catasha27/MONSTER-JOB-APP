@@ -85,6 +85,8 @@ const renderDetails = ({ position, description, location, type, workload, img, i
     `
 }
 
+
+
 // EVENTS
 
 const initializeApp = async () => {
@@ -105,5 +107,7 @@ const showDetails = async (id) => {
     hideElements(["#loader"])
     renderDetails(job)
 }
+
+
 
 window.addEventListener("load", initializeApp)

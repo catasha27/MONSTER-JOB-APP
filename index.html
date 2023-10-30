@@ -60,13 +60,47 @@
         <section id="filter-wrapper" class="flex my-8">
             <form action="" class="filter-menu-container flex flex-wrap justify-center w-full my-10 gap-5">
                 <select name="monster-type-menu" id="monster-type-menu" class="p-2 rounded-md focus:ring-4 focus:ring-[#606EB4ff] focus-visible:outline-none" aria-label="Monster types list">
-                    <!-- Here we will render monster types from API -->
+                    <option value="">Monster types</option>
+                    <option value="vampire">Vampire</option>
+                    <option value="whitch">Witch</option>
+                    <option value="ghost">Ghost</option>
+                    <option value="swamp thing">Swamp Thing</option>
+                    <option value="poltergeist">Poltergeist</option>
+                    <option value="sphinx">Sphinx</option>
+                    <option value="skeleton">Skeleton</option>
+                    <option value="troll">Troll</option>
+                    <option value="metal golem">Metal Golem</option>
+                    <option value="zombie">Zombie</option>
+                    <option value="werewolf">Werewolf</option>
+                    <option value="mummy">Mummy</option>
+                    <option value="tengu">Tengu</option>
                 </select>
                 <select name="location-menu" id="location-menu" class="p-2 rounded-md focus:ring-4 focus:ring-[#606EB4ff] focus-visible:outline-none" aria-label="Locations list">
-                    <!-- Here we will render locations from API -->
+                    <option value="">Location</option>
+                    <option value="australia">Australia</option>
+                    <option value="rumania">Rumania</option>
+                    <option value="italy">Italy</option>
+                    <option value="austria">Austria</option>
+                    <option value="côte d'ivoire">Côte d'ivoire</option>
+                    <option value="united states of america">United States of America</option>
+                    <option value="russia">Russia</option>
+                    <option value="spain">Spain</option>
+                    <option value="colombia">Colombia</option>
+                    <option value="canada">Canada</option>
+                    <option value="england">England</option>
+                    <option value="israel">Israel</option>
+                    <option value="jamaica">Jamaica</option>
+                    <option value="egypt">Egypt</option>
+                    <option value="japan">Japan</option>
+                    <option value="france">France</option>
+                    <option value="germany">Germany</option>
+                    <option value="belgium">Belgium</option>
+                    <option value="poland">Poland</option>
                 </select>
                 <select name="workload-menu" id="workload-menu" class="p-2 rounded-md focus:ring-4 focus:ring-[#606EB4ff] focus-visible:outline-none" aria-label="Workload types list">
-                    <!-- Here we will render workload types from API -->
+                    <option value="">Workload</option>
+                    <option value="full-time">Full-Time</option>
+                    <option value="part-time">Part-Time</option>
                 </select>
                 <div class="flex flex-row justify-end items-center gap-2">
                     <button id="btn-search-filter" type="submit" class="btn flex-start text-slate-50 text-base py-2 px-3 bg-lime-600 hover:bg-green-700/90 rounded-md" aria-label="Search by selected filter"><i class="fa-solid fa-magnifying-glass mr-1" aria-hidden="true"></i>Search</button>
@@ -99,7 +133,19 @@
                         <div class="flex flex-col flex-1 basis-52 gap-1">
                             <label for="monster-option" class="font-bold">Monster Types<span class="text-red-500 ml-1">*</span></label>
                             <select name="monster-option" id="monster-option" class="p-2 border border-gray-300 rounded-md focus:ring-4 focus:ring-[#606EB4ff] focus-visible:outline-none" aria-label="List of monster types">
-                                <!-- Here the types of monster will be rendered from API -->
+                                <option value="vampire">Vampire</option>
+                                <option value="whitch">Witch</option>
+                                <option value="ghost">Ghost</option>
+                                <option value="swamp thing">Swamp Thing</option>
+                                <option value="poltergeist">Poltergeist</option>
+                                <option value="sphinx">Sphinx</option>
+                                <option value="skeleton">Skeleton</option>
+                                <option value="troll">Troll</option>
+                                <option value="metal golem">Metal Golem</option>
+                                <option value="zombie">Zombie</option>
+                                <option value="werewolf">Werewolf</option>
+                                <option value="mummy">Mummy</option>
+                                <option value="tengu">Tengu</option>
                             </select> <br>
                             <label for="job-title-entry" class="font-bold">Job Title<span class="text-red-500 ml-1">*</span></label>
                             <input type="text"  name="job-title-entry" id="job-title-entry" placeholder="Job title" class="p-2 border border-gray-300 rounded-md focus:ring-4 focus:ring-[#606EB4ff] focus-visible:outline-none" aria-label="Job title"><br>
@@ -109,11 +155,30 @@
                         <div class="flex flex-col flex-1 basis-52 gap-1">
                             <label for="location-option" class="font-bold">Location<span class="text-red-500 ml-1">*</span></label>
                             <select name="location-option" id="location-option" class="p-2 border border-gray-300 rounded-md focus:ring-4 focus:ring-[#606EB4ff] focus-visible:outline-none" aria-label="List of countries">
-                                <!-- Here the list of countries will be rendered from API -->
+                                <option value="australia">Australia</option>
+                                <option value="rumania">Rumania</option>
+                                <option value="italy">Italy</option>
+                                <option value="austria">Austria</option>
+                                <option value="côte d'ivoire">Côte d'ivoire</option>
+                                <option value="united states of america">United States of America</option>
+                                <option value="russia">Russia</option>
+                                <option value="spain">Spain</option>
+                                <option value="colombia">Colombia</option>
+                                <option value="canada">Canada</option>
+                                <option value="england">England</option>
+                                <option value="israel">Israel</option>
+                                <option value="jamaica">Jamaica</option>
+                                <option value="egypt">Egypt</option>
+                                <option value="japan">Japan</option>
+                                <option value="france">France</option>
+                                <option value="germany">Germany</option>
+                                <option value="belgium">Belgium</option>
+                                <option value="poland">Poland</option>
                             </select><br>
                             <label for="workload-option" class="font-bold">Workload<span class="text-red-500 ml-1">*</span></label>
                             <select name="workload-option" id="workload-option" class="p-2 border border-gray-300 rounded-md focus:ring-4 focus:ring-[#606EB4ff] focus-visible:outline-none" aria-label="Types of worload">
-                                <!-- Here the types of workload will be rendered from API -->
+                                <option value="full-time">Full-Time</option>
+                                <option value="part-time">Part-Time</option>
                             </select><br>
                             <label for="salary" class="font-bold">Annual Salary<span class="text-red-500 ml-1">*</span></label>
                             <input type="text" name="salary" id="salary" placeholder="0" class="p-2 border border-gray-300 rounded-md focus:ring-4 focus:ring-[#606EB4ff] focus-visible:outline-none" aria-label="Annual salary">
@@ -140,7 +205,6 @@
                     </div>
                     <fieldset class="border-2 rounded-md px-4">
                         <legend class="my-3 font-bold">Skills Required<span class="font-light mx-1">(max. 3 allowed)</span></label></legend>
-                            <!-- Here the list of skills will be rendered from API -->
                         <div id="skill-options-container" class="skills pb-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
                             <div>
                                 <input type="checkbox" id="ability to work under pressure" class="skill mr-2" value="ability to work under pressure"/>
