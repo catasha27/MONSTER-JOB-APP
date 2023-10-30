@@ -89,14 +89,24 @@ const renderDetails = ({ position, description, location, type, workload, img, i
 
 // EVENTS
 
-const initializeApp = async () => {
-    const allJobs = await getJobs()
+const initializeApp = () => {
+    searchJobs()
+    $("#btn-search-filter").addEventListener("click", filterJobs)
+    $("#monster-type-menu").addEventListener("change", selectMonster)
+    $("#location-menu").addEventListener("change", selectLocation)
+    $("#workload-menu").addEventListener("change", selectWorkload)
+    $("#btn-reset-filter").addEventListener("click", clearFilter)
+}
+
+const searchJobs = async (criteria, value) => {
+    disableFilters()
+    hideElements(["#job-cards-wrapper"])
+    showElements(["#loader"])
+    const jobs = await getJobs(criteria, value)
     hideElements(["#loader"])
+    renderJobs(jobs)
     showElements(["#job-cards-wrapper"])
-    renderJobs(allJobs)
-
-
-
+    enableFilters()
 }
 
 const showDetails = async (id) => {
@@ -108,6 +118,60 @@ const showDetails = async (id) => {
     renderDetails(job)
 }
 
+const disableFilters = () => {
+    $("#monster-type-menu").disabled=true
+    $("#location-menu").disabled=true
+    $("#workload-menu").disabled=true
+    $("#btn-search-filter").disabled=true
+    $("#btn-reset-filter").disabled=true
+}
 
+const enableFilters = () => {
+    $("#monster-type-menu").disabled=false
+    $("#location-menu").disabled=false
+    $("#workload-menu").disabled=false
+    $("#btn-search-filter").disabled=false
+    $("#btn-reset-filter").disabled=false
+}
+
+const selectMonster = () => {
+    $("#location-menu").value=""
+    $("#workload-menu").value=""
+}
+
+const selectLocation = () => {
+    $("#monster-type-menu").value=""
+    $("#workload-menu").value=""
+}
+
+const selectWorkload = () => {
+    $("#monster-type-menu").value=""
+    $("#location-menu").value=""
+}
+
+const filterJobs = async (e) => {
+    e.preventDefault()
+    const monster = $("#monster-type-menu").value
+    const location = $("#location-menu").value
+    const workload = $("#workload-menu").value
+    let criteria = ""
+    let value = ""
+    if (monster) {
+        criteria = "type"
+        value = monster
+    } else if (location) {
+        criteria = "location"
+        value = location
+    } else if (workload) {
+        criteria = "workload"
+        value = workload
+    }
+    searchJobs(criteria, value)
+}
+
+const clearFilter = () => {
+    $("#filter-form").reset()
+    searchJobs()
+}
 
 window.addEventListener("load", initializeApp)
