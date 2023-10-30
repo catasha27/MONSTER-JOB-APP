@@ -26,3 +26,25 @@ const getJob = (id) => {
         .then(delayResponse)
     return job
 }
+
+const deleteJob = (id) => {
+    const url = new URL(API_URL + "/" + id);
+
+    const job = fetch(url, { method: "DELETE" })
+        .then((response) => response.json())
+        .then(delayResponse)
+    return job
+}
+
+const createJob = (job) => {
+    const url = new URL(API_URL);
+
+    const newJob = fetch(url, { 
+        method: "POST", 
+        body: JSON.stringify(job), 
+        headers: { 'content-type': 'application/json' }
+    })
+        .then((response) => response.json())
+        .then(delayResponse)
+    return newJob
+}

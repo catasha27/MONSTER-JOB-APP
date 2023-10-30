@@ -128,7 +128,7 @@
             <article class="flex flex-col items-center w-full p-7 bg-white drop-shadow-xl rounded-md text-slate-800 2xl:w-[1500px]">
                 <h2 id="new-job-title" class="self-start mb-5 text-4xl font-bold hidden">Add Job</h2>
                 <h2 id="edit-job-title" class="self-start mb-5 text-4xl font-bold">Edit Job</h2>
-                <form action="" id="new-job-form" class=" flex flex-col gap-6 w-full">
+                <form action="" id="job-form" class=" flex flex-col gap-6 w-full">
                     <div class="flex flex-col flex-wrap gap-6 sm:flex-row sm:justify-between">
                         <div class="flex flex-col flex-1 basis-52 gap-1">
                             <label for="monster-option" class="font-bold">Monster Types<span class="text-red-500 ml-1">*</span></label>
@@ -188,6 +188,10 @@
                                 <input type="checkbox" id="valid-experience" aria-label="Checkbox for valid experience required">
                                 <label for="valid-experience" class="ml-2 font-bold">Experience Required</label>
                             </div><br>
+                            <div class="flex flex-col">
+                                <label for="job-image-url" class="font-bold">Job Image<span class="text-red-500 ml-1">*</span></label>
+                                <input type="text"  name="job-image-url" id="job-image-url" placeholder="Job Image URL" class="p-2 border border-gray-300 rounded-md focus:ring-4 focus:ring-[#606EB4ff] focus-visible:outline-none" aria-label="Job Image URL"><br>
+                            </div>
                             <fieldset class="border rounded-md px-4">
                                 <legend class="my-3 font-bold">Perks:</legend>
                                 <label for="vacation" class="my-3 font-bold">PTO</label>
@@ -306,14 +310,6 @@
 
         <!-- Modal delete job form Section -->
         <section id="delete-job-modal" class="flex hidden justify-center items-center my-10">
-            <article class="p-4 bg-white rounded-md">
-                    <h5 class="text-lg mb-8">¿Are you completely sure you want to delete this job position: <span class="job-position font-medium"></span>?</h5>
-                    <div class="flex flex-row justify-end items-center gap-4">
-                        <button id="btn-cancel-modal" class="btn justify-center items-center text-base hover:text-slate-50 mt-4 py-2 px-5 bg-slate-300 hover:bg-slate-500  rounded-md" aria-label="Cancel deleting job">Cancel
-                        </button>
-                        <button id="btn-delete-modal" class="btn flex justify-center items-center text-slate-50 text-base mt-4 py-2 px-3 bg-purple-900  hover:bg-red-700/90 rounded-md" aria-label="Delete job confirmation"><i class="fa-solid fa-trash mr-2" aria-hidden="true"></i>Delete</button>
-                    </div>
-            </article>
         </section>
 
     </main>

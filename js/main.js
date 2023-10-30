@@ -78,14 +78,44 @@ const renderDetails = ({ position, description, location, type, workload, img, i
             </div>
             <div class="flex flex-row justify-end items-center gap-4 mt-4">
                 <button id="btn-edit-job" class="btn flex justify-center items-center text-slate-50 text-base mt-4 py-2 px-5 bg-lime-600 hover:bg-green-700/90 rounded-md" aria-label="Edit job data"><i class="fa-regular fa-pen-to-square mr-2" aria-hidden="true"></i>Edit</i></button>
-                <button id="btn-delete-job" class="btn flex justify-center items-center text-slate-50 text-base mt-4 py-2 px-3 bg-purple-900  hover:bg-red-700/90 rounded-md" aria-label="Delete job"><i class="fa-solid fa-trash mr-2" aria-hidden="true"></i>Delete</button>
+                <button id="btn-delete-job" class="btn flex justify-center items-center text-slate-50 text-base mt-4 py-2 px-3 bg-purple-900  hover:bg-red-700/90 rounded-md" aria-label="Delete job" onclick="showDeleteModal('${id}', '${position}')"><i class="fa-solid fa-trash mr-2" aria-hidden="true"></i>Delete</button>
             </div>
         </div>
     </article>
     `
 }
 
+const renderDeleteModal = (id, position) => {
+    $("#delete-job-modal").innerHTML = /*html*/`
+    <article class="p-4 bg-white rounded-md">
+        <h5 class="text-lg mb-8">¿Are you completely sure you want to delete this job position: <span class="job-position font-medium">${position}</span>?</h5>
+        <div class="flex flex-row justify-end items-center gap-4">
+            <button id="btn-cancel-modal" class="btn justify-center items-center text-base hover:text-slate-50 mt-4 py-2 px-5 bg-slate-300 hover:bg-slate-500  rounded-md" aria-label="Cancel deleting job" onclick="closeModal()">Cancel
+            </button>
+            <button id="btn-delete-modal" class="btn flex justify-center items-center text-slate-50 text-base mt-4 py-2 px-3 bg-purple-900  hover:bg-red-700/90 rounded-md" aria-label="Delete job confirmation" onclick="deleteSelectedJob('${id}')"><i class="fa-solid fa-trash mr-2" aria-hidden="true"></i>Delete</button>
+        </div>
+    </article>
+    `
+}
 
+const getJobFormData = () => {
+    return {
+        position: $("#job-title-entry").value, 
+        description: $("#job-description-entry").value,
+        location: $("#location-option").value, 
+        type: $("#monster-option").value, 
+        workload: $("#workload-option").value, 
+        img: $("#job-image-url").value, 
+        salary: $("#salary").value, 
+        experience: $("#valid-experience").checked, 
+        perks: { 
+            pto: $("#vacation").value, 
+            foodAllowance: $("#valid-allowance").checked, 
+            inCompanyTraining: $("#valid-training").checked, 
+        }, 
+        skills: [...$$("#skill-options-container input")].filter(input => input.checked).map(input =>input.value)
+    }
+}
 
 // EVENTS
 
@@ -96,6 +126,7 @@ const initializeApp = () => {
     $("#location-menu").addEventListener("change", selectLocation)
     $("#workload-menu").addEventListener("change", selectWorkload)
     $("#btn-reset-filter").addEventListener("click", clearFilter)
+    $("#btn-new-job").addEventListener("click", submitJob)
 }
 
 const searchJobs = async (criteria, value) => {
@@ -105,9 +136,32 @@ const searchJobs = async (criteria, value) => {
     const jobs = await getJobs(criteria, value)
     hideElements(["#loader"])
     renderJobs(jobs)
-    showElements(["#job-cards-wrapper"])
+    showElements(["#filter-wrapper", "#job-cards-wrapper"])
     enableFilters()
 }
+
+const clickOnBurger = () => {
+    showElements(["#nav-menu-container", "#close-burger-menu"])
+    hideElements(["#show-burger-menu"])
+}
+
+const clickOnClose = () => {
+    hideElements(["#nav-menu-container", "#close-burger-menu"])
+    showElements(["#show-burger-menu"])
+}
+
+$("#btn-menu").addEventListener("click", () => {
+    if ($("#show-burger-menu").classList.contains("hidden")) {
+        clickOnClose()
+    } else {
+        clickOnBurger()
+    }
+})
+
+$("#new-job-link").addEventListener("click", () => {
+    showElements(["#job-form-wrapper", "#new-job-title", "#btn-new-job"])
+    hideElements(["#filter-wrapper", "#job-cards-wrapper", "#edit-job-title", "#btn-edit-job"])
+})
 
 const showDetails = async (id) => {
     hideElements(["#job-cards-wrapper", "#filter-wrapper"])
@@ -171,6 +225,34 @@ const filterJobs = async (e) => {
 
 const clearFilter = () => {
     $("#filter-form").reset()
+    searchJobs()
+}
+
+const showDeleteModal = (id, position) => {
+    hideElements(["#job-detail-wrapper"])
+    showElements(["#delete-job-modal"])
+    renderDeleteModal(id, position)
+}
+
+const deleteSelectedJob = async (id) => {
+    hideElements(["#delete-job-modal"])
+    showElements(["#loader"])
+    await deleteJob (id)
+    searchJobs()
+}
+
+const closeModal = () => {
+    hideElements(["#delete-job-modal"])
+    searchJobs()
+}
+
+const submitJob = async (e) => {
+    e.preventDefault()
+    const newJob = getJobFormData()
+    hideElements(["#job-form-wrapper"])
+    showElements(["#loader"])
+    console.log(newJob)
+    await createJob(newJob)
     searchJobs()
 }
 
