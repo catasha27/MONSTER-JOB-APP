@@ -26,5 +26,3 @@ const getJob = (id) => {
         .then(delayResponse)
     return job
 }
-
-getJobs().then(console.log)
