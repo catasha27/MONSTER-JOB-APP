@@ -55,29 +55,28 @@ const renderDetails = ({ position, description, location, type, workload, img, i
                     <p id="job-location" ><i class="fa-solid fa-earth-americas mr-2" aria-hidden="true"></i>${location}</p>
                     <p id="job-workload" ><i class="fa-regular fa-clock mr-2" aria-hidden="true"></i>${workload}</p>
                     <p id="job-salary" ><i class="fa-solid fa-dollar-sign mr-2" aria-hidden="true"></i>${salary}</p>
-                    <p id="job-experience" ><i class="fa-solid fa-user-check mr-2" aria-hidden="true"></i>Experience required: <span class="uppercase mr-1">${experience?"yes":"no"}</span></p>
+                    <p id="job-experience" ><i class="fa-solid fa-user-check mr-2" aria-hidden="true"></i>Experience required: <span class="uppercase mr-1">${experience ? "yes" : "no"}</span></p>
                 </div>
                 <div class="flex flex-col md:flex-row gap-8 md:gap-28">
                     <div class="flex flex-col gap-3">
                         <p class="font-bold">Perks:</p>
                         <p id="job-time-off"><i class="fa-solid fa-plane-departure mr-2" aria-hidden="true"></i>PTO: ${pto} weeks</p>
-                        <p id="job-allowance"><i class="fa-solid fa-hand-holding-dollar mr-2" aria-hidden="true"></i>Allowance: <span class="uppercase mr-1">${foodAllowance?"yes":"no"}</span></p>
-                        <p id="job-training"><i class="fa-solid fa-graduation-cap mr-2" aria-hidden="true"></i>Training provided: <span class="uppercase mr-1">${inCompanyTraining?"yes":"no"}</span></p>
+                        <p id="job-allowance"><i class="fa-solid fa-hand-holding-dollar mr-2" aria-hidden="true"></i>Allowance: <span class="uppercase mr-1">${foodAllowance ? "yes" : "no"}</span></p>
+                        <p id="job-training"><i class="fa-solid fa-graduation-cap mr-2" aria-hidden="true"></i>Training provided: <span class="uppercase mr-1">${inCompanyTraining ? "yes" : "no"}</span></p>
                     </div>
                     <div id="job-skills" class="flex flex-col gap-3">
                         <p class="font-bold">Skills:</p>
                         <ul role="list" class="marker:text-[#66C0D3ff] list-disc pl-5 space-y-3">
-                            ${
-                                skills.map(skill => /*html*/`
+                            ${skills.map(skill => /*html*/`
                                 <li>${skill}</li>
                                 `).join("")
-                            }
+        }
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="flex flex-row justify-end items-center gap-4 mt-4">
-                <button id="btn-edit-job" class="btn flex justify-center items-center text-slate-50 text-base mt-4 py-2 px-5 bg-lime-600 hover:bg-green-700/90 rounded-md" aria-label="Edit job data"><i class="fa-regular fa-pen-to-square mr-2" aria-hidden="true"></i>Edit</i></button>
+                <button id="btn-edit-job" class="btn flex justify-center items-center text-slate-50 text-base mt-4 py-2 px-5 bg-lime-600 hover:bg-green-700/90 rounded-md" aria-label="Edit job data" onclick="showEditJobForm()"><i class="fa-regular fa-pen-to-square mr-2" aria-hidden="true"></i>Edit</i></button>
                 <button id="btn-delete-job" class="btn flex justify-center items-center text-slate-50 text-base mt-4 py-2 px-3 bg-purple-900  hover:bg-red-700/90 rounded-md" aria-label="Delete job" onclick="showDeleteModal('${id}', '${position}')"><i class="fa-solid fa-trash mr-2" aria-hidden="true"></i>Delete</button>
             </div>
         </div>
@@ -100,22 +99,57 @@ const renderDeleteModal = (id, position) => {
 
 const getJobFormData = () => {
     return {
-        position: $("#job-title-entry").value, 
+        id: $("#job-id").value,
+        position: $("#job-title-entry").value,
         description: $("#job-description-entry").value,
-        location: $("#location-option").value, 
-        type: $("#monster-option").value, 
-        workload: $("#workload-option").value, 
-        img: $("#job-image-url").value, 
-        salary: $("#salary").value, 
-        experience: $("#valid-experience").checked, 
-        perks: { 
-            pto: $("#vacation").value, 
-            foodAllowance: $("#valid-allowance").checked, 
-            inCompanyTraining: $("#valid-training").checked, 
-        }, 
-        skills: [...$$("#skill-options-container input")].filter(input => input.checked).map(input =>input.value)
+        location: $("#location-option").value,
+        type: $("#monster-option").value,
+        workload: $("#workload-option").value,
+        img: $("#job-image-url").value,
+        salary: $("#salary").value,
+        experience: $("#valid-experience").checked,
+        perks: {
+            pto: $("#vacation").value,
+            foodAllowance: $("#valid-allowance").checked,
+            inCompanyTraining: $("#valid-training").checked,
+        },
+        skills: [...$$("#skill-options-container input")].filter(input => input.checked).map(input => input.value)
     }
 }
+
+const setJobFormData = ({
+    id,
+    position,
+    description,
+    location,
+    type,
+    workload,
+    img,
+    salary,
+    experience,
+    perks: { pto, foodAllowance, inCompanyTraining },
+    skills
+}) => {
+    $("#job-id").value = id
+    $("#job-title-entry").value = position
+    $("#job-description-entry").value = description
+    $("#location-option").value = location
+    $("#monster-option").value = type
+    $("#workload-option").value = workload
+    $("#job-image-url").value = img
+    $("#salary").value = salary
+    $("#valid-experience").checked = experience
+    $("#vacation").value = pto
+    $("#valid-allowance").checked = foodAllowance
+    $("#valid-training").checked = inCompanyTraining
+        ;[...$$("#skill-options-container input")].forEach(input => {
+            if (skills.includes(input.value)) {
+                input.checked = true
+            }
+        });
+
+}
+
 
 // EVENTS
 
@@ -126,7 +160,9 @@ const initializeApp = () => {
     $("#location-menu").addEventListener("change", selectLocation)
     $("#workload-menu").addEventListener("change", selectWorkload)
     $("#btn-reset-filter").addEventListener("click", clearFilter)
-    $("#btn-new-job").addEventListener("click", submitJob)
+    $("#btn-new-job-data").addEventListener("click", submitJob)
+    $("#btn-edit-job-data").addEventListener("click", submitJob)
+
 }
 
 const searchJobs = async (criteria, value) => {
@@ -159,8 +195,9 @@ $("#btn-menu").addEventListener("click", () => {
 })
 
 $("#new-job-link").addEventListener("click", () => {
-    showElements(["#job-form-wrapper", "#new-job-title", "#btn-new-job"])
-    hideElements(["#filter-wrapper", "#job-cards-wrapper", "#edit-job-title", "#btn-edit-job"])
+    $("#job-form").reset()
+    showElements(["#job-form-wrapper", "#new-job-title", "#btn-new-job-data"])
+    hideElements(["#filter-wrapper", "#job-cards-wrapper", "#job-detail-wrapper", "#edit-job-title", "#btn-edit-job-data"])
 })
 
 const showDetails = async (id) => {
@@ -170,37 +207,38 @@ const showDetails = async (id) => {
     showElements(["#job-detail-wrapper"])
     hideElements(["#loader"])
     renderDetails(job)
+    setJobFormData(job)
 }
 
 const disableFilters = () => {
-    $("#monster-type-menu").disabled=true
-    $("#location-menu").disabled=true
-    $("#workload-menu").disabled=true
-    $("#btn-search-filter").disabled=true
-    $("#btn-reset-filter").disabled=true
+    $("#monster-type-menu").disabled = true
+    $("#location-menu").disabled = true
+    $("#workload-menu").disabled = true
+    $("#btn-search-filter").disabled = true
+    $("#btn-reset-filter").disabled = true
 }
 
 const enableFilters = () => {
-    $("#monster-type-menu").disabled=false
-    $("#location-menu").disabled=false
-    $("#workload-menu").disabled=false
-    $("#btn-search-filter").disabled=false
-    $("#btn-reset-filter").disabled=false
+    $("#monster-type-menu").disabled = false
+    $("#location-menu").disabled = false
+    $("#workload-menu").disabled = false
+    $("#btn-search-filter").disabled = false
+    $("#btn-reset-filter").disabled = false
 }
 
 const selectMonster = () => {
-    $("#location-menu").value=""
-    $("#workload-menu").value=""
+    $("#location-menu").value = ""
+    $("#workload-menu").value = ""
 }
 
 const selectLocation = () => {
-    $("#monster-type-menu").value=""
-    $("#workload-menu").value=""
+    $("#monster-type-menu").value = ""
+    $("#workload-menu").value = ""
 }
 
 const selectWorkload = () => {
-    $("#monster-type-menu").value=""
-    $("#location-menu").value=""
+    $("#monster-type-menu").value = ""
+    $("#location-menu").value = ""
 }
 
 const filterJobs = async (e) => {
@@ -229,7 +267,7 @@ const clearFilter = () => {
 }
 
 const showDeleteModal = (id, position) => {
-    hideElements(["#job-detail-wrapper"])
+    hideElements(["#job-detail-wrapper", "#job-form-wrapper"])
     showElements(["#delete-job-modal"])
     renderDeleteModal(id, position)
 }
@@ -237,7 +275,7 @@ const showDeleteModal = (id, position) => {
 const deleteSelectedJob = async (id) => {
     hideElements(["#delete-job-modal"])
     showElements(["#loader"])
-    await deleteJob (id)
+    await deleteJob(id)
     searchJobs()
 }
 
@@ -249,11 +287,19 @@ const closeModal = () => {
 const submitJob = async (e) => {
     e.preventDefault()
     const newJob = getJobFormData()
-    hideElements(["#job-form-wrapper"])
+    hideElements(["#job-form-wrapper", "#job-detail-wrapper"])
     showElements(["#loader"])
-    console.log(newJob)
-    await createJob(newJob)
+    if (newJob.id) {
+        await editJob(newJob)
+    } else {
+        await createJob(newJob)
+    }
     searchJobs()
+}
+
+const showEditJobForm = () => {
+    showElements(["#job-form-wrapper", "#edit-job-title", "#btn-edit-job-data"])
+    hideElements(["#new-job-title", "#btn-new-job-data"])
 }
 
 window.addEventListener("load", initializeApp)

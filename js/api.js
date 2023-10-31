@@ -48,3 +48,16 @@ const createJob = (job) => {
         .then(delayResponse)
     return newJob
 }
+
+const editJob = (job) => {
+    const url = new URL(API_URL + "/" + job.id);
+
+    const editJob = fetch(url, { 
+        method: "PUT", 
+        body: JSON.stringify(job), 
+        headers: { 'content-type': 'application/json' }
+    })
+        .then((response) => response.json())
+        .then(delayResponse)
+    return editJob
+}

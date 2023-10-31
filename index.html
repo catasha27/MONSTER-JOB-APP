@@ -124,7 +124,7 @@
         </section>
         
         <!-- New and Edit Job Form Section -->
-        <section id="job-form-wrapper" class="flex hidden flex-col items-center w-full px-3 sm:px-10 pb-10">
+        <section id="job-form-wrapper" class="flex hidden flex-col items-center w-full px-3 mt-10 sm:px-10 pb-10">
             <article class="flex flex-col items-center w-full p-7 bg-white drop-shadow-xl rounded-md text-slate-800 2xl:w-[1500px]">
                 <h2 id="new-job-title" class="self-start mb-5 text-4xl font-bold hidden">Add Job</h2>
                 <h2 id="edit-job-title" class="self-start mb-5 text-4xl font-bold">Edit Job</h2>
@@ -133,19 +133,19 @@
                         <div class="flex flex-col flex-1 basis-52 gap-1">
                             <label for="monster-option" class="font-bold">Monster Types<span class="text-red-500 ml-1">*</span></label>
                             <select name="monster-option" id="monster-option" class="p-2 border border-gray-300 rounded-md focus:ring-4 focus:ring-[#606EB4ff] focus-visible:outline-none" aria-label="List of monster types">
-                                <option value="vampire">Vampire</option>
-                                <option value="whitch">Witch</option>
-                                <option value="ghost">Ghost</option>
-                                <option value="swamp thing">Swamp Thing</option>
-                                <option value="poltergeist">Poltergeist</option>
-                                <option value="sphinx">Sphinx</option>
-                                <option value="skeleton">Skeleton</option>
-                                <option value="troll">Troll</option>
-                                <option value="metal golem">Metal Golem</option>
-                                <option value="zombie">Zombie</option>
-                                <option value="werewolf">Werewolf</option>
-                                <option value="mummy">Mummy</option>
-                                <option value="tengu">Tengu</option>
+                                <option value="Vampire">Vampire</option>
+                                <option value="Whitch">Witch</option>
+                                <option value="Ghost">Ghost</option>
+                                <option value="Swamp Thing">Swamp Thing</option>
+                                <option value="Poltergeist">Poltergeist</option>
+                                <option value="Sphinx">Sphinx</option>
+                                <option value="Skeleton">Skeleton</option>
+                                <option value="Troll">Troll</option>
+                                <option value="Metal Golem">Metal Golem</option>
+                                <option value="Zombie">Zombie</option>
+                                <option value="Werewolf">Werewolf</option>
+                                <option value="Mummy">Mummy</option>
+                                <option value="Tengu">Tengu</option>
                             </select> <br>
                             <label for="job-title-entry" class="font-bold">Job Title<span class="text-red-500 ml-1">*</span></label>
                             <input type="text"  name="job-title-entry" id="job-title-entry" placeholder="Job title" class="p-2 border border-gray-300 rounded-md focus:ring-4 focus:ring-[#606EB4ff] focus-visible:outline-none" aria-label="Job title"><br>
@@ -155,25 +155,25 @@
                         <div class="flex flex-col flex-1 basis-52 gap-1">
                             <label for="location-option" class="font-bold">Location<span class="text-red-500 ml-1">*</span></label>
                             <select name="location-option" id="location-option" class="p-2 border border-gray-300 rounded-md focus:ring-4 focus:ring-[#606EB4ff] focus-visible:outline-none" aria-label="List of countries">
-                                <option value="australia">Australia</option>
-                                <option value="rumania">Rumania</option>
-                                <option value="italy">Italy</option>
-                                <option value="austria">Austria</option>
-                                <option value="côte d'ivoire">Côte d'ivoire</option>
-                                <option value="united states of america">United States of America</option>
-                                <option value="russia">Russia</option>
-                                <option value="spain">Spain</option>
-                                <option value="colombia">Colombia</option>
-                                <option value="canada">Canada</option>
-                                <option value="england">England</option>
-                                <option value="israel">Israel</option>
-                                <option value="jamaica">Jamaica</option>
-                                <option value="egypt">Egypt</option>
-                                <option value="japan">Japan</option>
-                                <option value="france">France</option>
-                                <option value="germany">Germany</option>
-                                <option value="belgium">Belgium</option>
-                                <option value="poland">Poland</option>
+                                <option value="Australia">Australia</option>
+                                <option value="Austria">Austria</option>
+                                <option value="Belgium">Belgium</option>
+                                <option value="Canada">Canada</option>
+                                <option value="Côte d'Ivoire">Côte d'ivoire</option>
+                                <option value="Colombia">Colombia</option>
+                                <option value="Egypt">Egypt</option>
+                                <option value="England">England</option>
+                                <option value="France">France</option>
+                                <option value="Germany">Germany</option>
+                                <option value="Israel">Israel</option>
+                                <option value="Italy">Italy</option>
+                                <option value="Jamaica">Jamaica</option>
+                                <option value="Japan">Japan</option>
+                                <option value="Poland">Poland</option>
+                                <option value="Rumania">Rumania</option>
+                                <option value="Russia">Russia</option>
+                                <option value="Spain">Spain</option>
+                                <option value="United States of America">United States of America</option>
                             </select><br>
                             <label for="workload-option" class="font-bold">Workload<span class="text-red-500 ml-1">*</span></label>
                             <select name="workload-option" id="workload-option" class="p-2 border border-gray-300 rounded-md focus:ring-4 focus:ring-[#606EB4ff] focus-visible:outline-none" aria-label="Types of worload">
@@ -192,6 +192,7 @@
                                 <label for="job-image-url" class="font-bold">Job Image<span class="text-red-500 ml-1">*</span></label>
                                 <input type="text"  name="job-image-url" id="job-image-url" placeholder="Job Image URL" class="p-2 border border-gray-300 rounded-md focus:ring-4 focus:ring-[#606EB4ff] focus-visible:outline-none" aria-label="Job Image URL"><br>
                             </div>
+                            <input id="job-id" name="job-id" type="hidden"/>
                             <fieldset class="border rounded-md px-4">
                                 <legend class="my-3 font-bold">Perks:</legend>
                                 <label for="vacation" class="my-3 font-bold">PTO</label>
@@ -297,12 +298,10 @@
                         </div>
                     </fieldset>
                     <div class="flex flex-row justify-end items-center gap-4">
-                        <p id="new-success-message" class="italic text-sm font-medium text-green-600 hidden" aria-label="Confirmación de operación agregada">NEW JOB ADDED</p>
-                        <p id="edit-success-message" class="italic text-sm font-medium text-green-600 hidden" aria-label="Confirmación de operación editado">JOB EDITED CORRECTLY</p>
                         <button id="btn-cancel-job-form" class="btn justify-center items-center text-base mt-4 py-2 px-5 bg-slate-300 hover:bg-slate-500 rounded-md" aria-label="Cancel changes in job form">Cancel
                         </button>
-                        <button id="btn-edit-job" type="submit" class="btn flex justify-center items-center text-slate-50 text-base mt-4 py-2 px-5 bg-lime-600 hover:bg-green-700/90 rounded-md" aria-label="Edit job data"><i class="fa-regular fa-pen-to-square mr-2" aria-hidden="true"></i>Edit</i></button>
-                        <button id="btn-new-job" type="submit" class="btn hidden flex justify-center items-center text-slate-50 text-base mt-4 py-2 px-5 bg-lime-600 hover:bg-green-700/90 rounded-md" aria-label="Add new job data"><i class="fa-solid fa-cloud-arrow-up mr-2" aria-hidden="true"></i>Submit</i></button>
+                        <button id="btn-edit-job-data" type="submit" class="btn flex justify-center items-center text-slate-50 text-base mt-4 py-2 px-5 bg-lime-600 hover:bg-green-700/90 rounded-md" aria-label="Edit job data"><i class="fa-regular fa-pen-to-square mr-2" aria-hidden="true"></i>Edit</i></button>
+                        <button id="btn-new-job-data" type="submit" class="btn hidden flex justify-center items-center text-slate-50 text-base mt-4 py-2 px-5 bg-lime-600 hover:bg-green-700/90 rounded-md" aria-label="Add new job data"><i class="fa-solid fa-cloud-arrow-up mr-2" aria-hidden="true"></i>Submit</i></button>
                     </div>
                 </form>
             </article>
