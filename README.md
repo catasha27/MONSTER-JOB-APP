@@ -1,6 +1,6 @@
 # **MONSTER JOBS - JOB APP FOR MONSTERS - ADA ITW**
 
-Deploy link: 
+Deploy link: https://catasha27.github.io/MONSTER-JOB-APP/
 
 MONSTER JOBS allows the person responsible for updating the Web to mantain the APP by posting, editing and deleting jobs as needed.
 
@@ -54,11 +54,11 @@ The HERO BANNER contains the slogan which when hovered allows the slogan to chan
 
 ![header and hero banner in mobile](./assets/img/screenshots/slogan1_mobile.jpg)
 
-![header and hero banner in mobile](./assets/img/screenshots/slogan1_mobile.jpg)
+![header and hero banner in mobile](./assets/img/screenshots/slogan2_mobile.jpg)
 
 The loader is a Frankenstein's Monster Dancing doing "THE FLOSS" dance move.
 
-![Franky loader in mobile](./assets/img/screenshots/loader_franky.jpg)
+![Franky loader in mobile](./assets/img/screenshots/Franky%20Loader%20Video%20Capture.gif)
 
 
 ### THANKS TO THE PACIENCE AND DEDICATION OF OUR TEACHERS:
