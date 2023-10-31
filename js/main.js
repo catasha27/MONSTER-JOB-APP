@@ -162,7 +162,9 @@ const initializeApp = () => {
     $("#btn-reset-filter").addEventListener("click", clearFilter)
     $("#btn-new-job-data").addEventListener("click", submitJob)
     $("#btn-edit-job-data").addEventListener("click", submitJob)
-
+    ;[...$$("#skill-options-container input")].forEach(input => {
+        input.addEventListener("change", validateSkills)
+    });
 }
 
 const searchJobs = async (criteria, value) => {
@@ -300,6 +302,16 @@ const submitJob = async (e) => {
 const showEditJobForm = () => {
     showElements(["#job-form-wrapper", "#edit-job-title", "#btn-edit-job-data"])
     hideElements(["#new-job-title", "#btn-new-job-data"])
+}
+
+const validateSkills = () => {
+    const inputs = [...$$("#skill-options-container input")]
+    const numSelected = inputs.filter(input => input.checked).length
+    if(numSelected >= 3) {
+        inputs.forEach(input => input.disabled = !input.checked)
+    }else {
+        inputs.forEach(input => input.disabled = false)
+    }
 }
 
 window.addEventListener("load", initializeApp)
