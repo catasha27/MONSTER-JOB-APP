@@ -71,41 +71,40 @@
             <form id="filter-form" action="" class="filter-menu-container flex flex-wrap justify-center w-full my-10 gap-5">
                 <select name="monster-type-menu" id="monster-type-menu" class="p-2 rounded-md focus:ring-4 focus:ring-[#606EB4ff] focus-visible:outline-none" aria-label="Monster types list">
                     <option value="">Monster types</option>
-                    <option value="vampire">Vampire</option>
-                    <option value="whitch">Witch</option>
-                    <option value="ghost">Ghost</option>
-                    <option value="swamp thing">Swamp Thing</option>
-                    <option value="poltergeist">Poltergeist</option>
-                    <option value="sphinx">Sphinx</option>
-                    <option value="skeleton">Skeleton</option>
-                    <option value="troll">Troll</option>
-                    <option value="metal golem">Metal Golem</option>
-                    <option value="zombie">Zombie</option>
-                    <option value="werewolf">Werewolf</option>
-                    <option value="mummy">Mummy</option>
-                    <option value="tengu">Tengu</option>
+                    <option value="Ghost">Ghost</option>
+                    <option value="Metal Golem">Metal Golem</option>
+                    <option value="Mummy">Mummy</option>
+                    <option value="Poltergeist">Poltergeist</option>
+                    <option value="Sphinx">Sphinx</option>
+                    <option value="Skeleton">Skeleton</option>
+                    <option value="Swamp Thing">Swamp Thing</option>
+                    <option value="Tengu">Tengu</option>
+                    <option value="Troll">Troll</option>
+                    <option value="Vampire">Vampire</option>
+                    <option value="Werewolf">Werewolf</option>
+                    <option value="Whitch">Witch</option>
+                    <option value="Zombie">Zombie</option>
                 </select>
                 <select name="location-menu" id="location-menu" class="p-2 rounded-md focus:ring-4 focus:ring-[#606EB4ff] focus-visible:outline-none" aria-label="Locations list">
                     <option value="">Location</option>
-                    <option value="australia">Australia</option>
-                    <option value="rumania">Rumania</option>
-                    <option value="italy">Italy</option>
-                    <option value="austria">Austria</option>
-                    <option value="côte d'ivoire">Côte d'ivoire</option>
-                    <option value="united states of america">United States of America</option>
-                    <option value="russia">Russia</option>
-                    <option value="spain">Spain</option>
-                    <option value="colombia">Colombia</option>
-                    <option value="canada">Canada</option>
-                    <option value="england">England</option>
-                    <option value="israel">Israel</option>
-                    <option value="jamaica">Jamaica</option>
-                    <option value="egypt">Egypt</option>
-                    <option value="japan">Japan</option>
-                    <option value="france">France</option>
-                    <option value="germany">Germany</option>
-                    <option value="belgium">Belgium</option>
-                    <option value="poland">Poland</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Austria">Austria</option>
+                    <option value="Belgium">Belgium</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Côte d'Ivoire">Côte d'ivoire</option>
+                    <option value="Colombia">Colombia</option>
+                    <option value="Egypt">Egypt</option>
+                    <option value="England">England</option>
+                    <option value="France">France</option>
+                    <option value="Germany">Germany</option>
+                    <option value="Israel">Israel</option>
+                    <option value="Italy">Italy</option>
+                    <option value="Jamaica">Jamaica</option>
+                    <option value="Japan">Japan</option>
+                    <option value="Poland">Poland</option>
+                    <option value="Rumania">Rumania</option>
+                    <option value="Russia">Russia</option>
+                    <option value="Spain">Spain</option>
                 </select>
                 <select name="workload-menu" id="workload-menu" class="p-2 rounded-md focus:ring-4 focus:ring-[#606EB4ff] focus-visible:outline-none" aria-label="Workload types list">
                     <option value="">Workload</option>
@@ -126,7 +125,6 @@
 
         <!-- Jobs Section -->
         <section id="job-cards-wrapper" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 justify-items-center w-full gap-5 px-6 pb-10">
-
         </section>
 
         <!-- Job Detail Section -->
@@ -143,19 +141,20 @@
                         <div class="flex flex-col flex-1 basis-52 gap-1">
                             <label for="monster-option" class="font-bold">Monster Types<span class="text-red-500 ml-1">*</span></label>
                             <select name="monster-option" id="monster-option" class="p-2 border border-gray-300 rounded-md focus:ring-4 focus:ring-[#606EB4ff] focus-visible:outline-none" aria-label="List of monster types">
-                                <option value="Vampire">Vampire</option>
-                                <option value="Whitch">Witch</option>
+                                <option value="">Monster types</option>
                                 <option value="Ghost">Ghost</option>
-                                <option value="Swamp Thing">Swamp Thing</option>
+                                <option value="Metal Golem">Metal Golem</option>
+                                <option value="Mummy">Mummy</option>
                                 <option value="Poltergeist">Poltergeist</option>
                                 <option value="Sphinx">Sphinx</option>
                                 <option value="Skeleton">Skeleton</option>
-                                <option value="Troll">Troll</option>
-                                <option value="Metal Golem">Metal Golem</option>
-                                <option value="Zombie">Zombie</option>
-                                <option value="Werewolf">Werewolf</option>
-                                <option value="Mummy">Mummy</option>
+                                <option value="Swamp Thing">Swamp Thing</option>
                                 <option value="Tengu">Tengu</option>
+                                <option value="Troll">Troll</option>
+                                <option value="Vampire">Vampire</option>
+                                <option value="Werewolf">Werewolf</option>
+                                <option value="Whitch">Witch</option>
+                                <option value="Zombie">Zombie</option>
                             </select> <br>
                             <label for="job-title-entry" class="font-bold">Job Title<span class="text-red-500 ml-1">*</span></label>
                             <input type="text"  name="job-title-entry" id="job-title-entry" placeholder="Job title" class="p-2 border border-gray-300 rounded-md focus:ring-4 focus:ring-[#606EB4ff] focus-visible:outline-none" aria-label="Job title"><br>
@@ -165,6 +164,7 @@
                         <div class="flex flex-col flex-1 basis-52 gap-1">
                             <label for="location-option" class="font-bold">Location<span class="text-red-500 ml-1">*</span></label>
                             <select name="location-option" id="location-option" class="p-2 border border-gray-300 rounded-md focus:ring-4 focus:ring-[#606EB4ff] focus-visible:outline-none" aria-label="List of countries">
+                                <option value="">Location</option>
                                 <option value="Australia">Australia</option>
                                 <option value="Austria">Austria</option>
                                 <option value="Belgium">Belgium</option>
@@ -187,6 +187,7 @@
                             </select><br>
                             <label for="workload-option" class="font-bold">Workload<span class="text-red-500 ml-1">*</span></label>
                             <select name="workload-option" id="workload-option" class="p-2 border border-gray-300 rounded-md focus:ring-4 focus:ring-[#606EB4ff] focus-visible:outline-none" aria-label="Types of worload">
+                                <option value="">Workload</option>
                                 <option value="full-time">Full-Time</option>
                                 <option value="part-time">Part-Time</option>
                             </select><br>
