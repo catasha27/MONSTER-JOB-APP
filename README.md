@@ -4,7 +4,7 @@ Deploy link:
 
 MONSTER JOBS allows the person responsible for updating the Web to mantain the APP by posting, editing and deleting jobs as needed.
 
-Project developed as an assignment for the Frontend Developement Course at ADA ITW to learn about Asinchronism. I used the following technologies and frameworks: 
+Project developed as an assignment for the Frontend Developement Course at ADA ITW to learn about Asynchronism. I used the following technologies and frameworks: 
 HTML5
 Tailwind for CSS
 Javascript
